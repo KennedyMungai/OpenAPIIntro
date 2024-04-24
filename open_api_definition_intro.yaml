@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
     title: OpenAPI definition
-    description: Manages ToDO list tasks
+    description: Manages ToDo list tasks
     version: 0.1.0
 servers:
     - url: http://localhost:8000/todolist/api
