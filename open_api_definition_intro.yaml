@@ -82,9 +82,22 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/task'
-                        example:
-                            title: 'Rose Colored Boy'
-                            status: 'New'
+                        # example:
+                        #     title: 'Rose Colored Boy'
+                        #     status: 'New'
+                        examples:
+                            New:
+                                value:
+                                    title: Learn API Testing
+                                    status: 'New'
+                            InProgress:
+                                value:
+                                    title: Learn API Testing
+                                    status: 'In Progress'
+                            Completed:
+                                value:
+                                    title: Learn API Testing
+                                    status: Completed
             parameters:
                 - name: taskId
                   in: path
