@@ -25,6 +25,12 @@ paths:
             tags:
                 - Tasks
             description: Creates a new task
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/task'
             responses:
                 '201':
                     description: Task successfully created
@@ -67,6 +73,12 @@ paths:
             tags:
                 - Tasks
             description: Updates all the info for a task
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/task'
             parameters:
                 - name: taskId
                   in: path
