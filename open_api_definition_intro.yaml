@@ -31,6 +31,9 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/task'
+                        example:
+                            title: 'Learn API Testing'
+                            status: 'New'
             responses:
                 '201':
                     description: Task successfully created
@@ -79,6 +82,9 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/task'
+                        example:
+                            title: 'Rose Colored Boy'
+                            status: 'New'
             parameters:
                 - name: taskId
                   in: path
