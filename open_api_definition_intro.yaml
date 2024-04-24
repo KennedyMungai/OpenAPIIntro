@@ -39,6 +39,14 @@ paths:
                             schema:
                                 $ref: '#/components/schemas/message'
     /tasks/{taskId}:
+        description: Gets the information for the specified task
+        parameters:
+            - name: taskId
+              in: path
+              schema:
+                  $ref: '#/components/schemas/taskId'
+              description: Id of the task
+              required: true
         get:
             tags:
                 - Tasks
@@ -110,3 +118,6 @@ components:
             properties:
                 message:
                     type: string
+        taskId:
+            type: integer
+            minimum: 1
