@@ -8,8 +8,50 @@ servers:
 paths:
     /tasks:
         get:
+            description: Gets the information for the specified task
+            responses:
+                '200':
+                    description: All the tasks have been retrieved
+                    content:
+                        application/json:
         post:
+            description: Creates a new task
+            responses:
+                '201':
+                    description: Task successfully created
+                    content:
+                        application/json:
+                '400':
+                    description: Bad request
+                    content:
+                        application/json:
     /tasks/{taskId}:
         get:
+            description: Gets the information for the specified task
+            responses:
+                '200':
+                    description: The task has been successfully retrieved
+                    content:
+                        application/json:
+                '404':
+                    description: The task was not found
         put:
+            description: Updates all the info for a task
+            responses:
+                '202':
+                    description: The task has been successfully updated
+                    content:
+                        application/json:
+                '404':
+                    description: The task was not found
+                    content:
+                        application/json:
         delete:
+            description: Deletes a task
+            responses:
+                '204':
+                    description: The task has been successfully deleted
+                '404':
+                    description: The task was not found
+                    content:
+                        application/json:
