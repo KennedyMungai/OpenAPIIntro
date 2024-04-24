@@ -3,8 +3,5 @@ info:
     title: OpenAPI definition
     description: Manages ToDO list tasks
     version: 0.1.0
-paths:
-    /users:
-        get:
-            summary: List users
-            description: Returns a list of users
+servers:
+    - url: http://localhost:8000/todolist/api
