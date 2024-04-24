@@ -20,7 +20,7 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/task'
+                                $ref: '#/components/schemas/tasks'
         post:
             tags:
                 - Tasks
@@ -95,3 +95,7 @@ components:
                 status:
                     type: string
                     enum: [New, In Progress, Completed]
+        tasks:
+            type: array
+            items:
+                $ref: '#/components/schemas/task'
