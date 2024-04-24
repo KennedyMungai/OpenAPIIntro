@@ -14,6 +14,8 @@ paths:
                     description: All the tasks have been retrieved
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
         post:
             description: Creates a new task
             responses:
@@ -21,10 +23,14 @@ paths:
                     description: Task successfully created
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
                 '400':
                     description: Bad request
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
     /tasks/{taskId}:
         get:
             description: Gets the information for the specified task
@@ -33,6 +39,8 @@ paths:
                     description: The task has been successfully retrieved
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
                 '404':
                     description: The task was not found
         put:
@@ -42,10 +50,14 @@ paths:
                     description: The task has been successfully updated
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
                 '404':
                     description: The task was not found
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
         delete:
             description: Deletes a task
             responses:
@@ -55,3 +67,18 @@ paths:
                     description: The task was not found
                     content:
                         application/json:
+                            schema:
+                                $ref: '#/components/schemas/task'
+components:
+    schemas:
+        task:
+            type: object
+            required:
+                - title
+                - status
+            properties:
+                title:
+                    type: string
+                status:
+                    type: string
+                    enum: [New, In Progress, Completed]
