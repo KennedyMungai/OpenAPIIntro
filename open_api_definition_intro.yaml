@@ -39,18 +39,17 @@ paths:
                             schema:
                                 $ref: '#/components/schemas/message'
     /tasks/{taskId}:
-        description: Gets the information for the specified task
-        parameters:
-            - name: taskId
-              in: path
-              schema:
-                  $ref: '#/components/schemas/taskId'
-              description: Id of the task
-              required: true
         get:
             tags:
                 - Tasks
             description: Gets the information for the specified task
+            parameters:
+                - name: taskId
+                  in: path
+                  schema:
+                      $ref: '#/components/schemas/taskId'
+                  description: Id of the task
+                  required: true
             responses:
                 '200':
                     description: The task has been successfully retrieved
@@ -68,6 +67,13 @@ paths:
             tags:
                 - Tasks
             description: Updates all the info for a task
+            parameters:
+                - name: taskId
+                  in: path
+                  schema:
+                      $ref: '#/components/schemas/taskId'
+                  description: Id of the task
+                  required: true
             responses:
                 '202':
                     description: The task has been successfully updated
@@ -85,6 +91,13 @@ paths:
             tags:
                 - Tasks
             description: Deletes a task
+            parameters:
+                - name: taskId
+                  in: path
+                  schema:
+                      $ref: '#/components/schemas/taskId'
+                  description: Id of the task
+                  required: true
             responses:
                 '204':
                     description: The task has been successfully deleted
